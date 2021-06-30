@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerHandler : MonoBehaviour
 {
-    [SerializeField] private GameObject ballPrefab;
+    [SerializeField] private GameObject playerPrefab;
     [SerializeField] private Rigidbody2D pivot;
     [SerializeField] private float detachDelay;
     [SerializeField] private float respawnDelay;
@@ -61,7 +61,7 @@ public class PlayerHandler : MonoBehaviour
 
     void SpawnNewBall()
     {
-        GameObject ballInstance = Instantiate(ballPrefab, pivot.position, Quaternion.identity);
+        GameObject ballInstance = Instantiate(playerPrefab, pivot.position, Quaternion.identity);
 
         currentBallRigidbody = ballInstance.GetComponent<Rigidbody2D>();
         currentBallSpringJoint = ballInstance.GetComponent<SpringJoint2D>();
